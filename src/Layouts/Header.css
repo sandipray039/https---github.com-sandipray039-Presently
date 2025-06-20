@@ -1,0 +1,7 @@
+.bg{
+     background: linear-gradient(35deg, rgb(0 151 111) 0%, rgb(130, 4, 255) 73%, rgb(193, 15, 255) 100%);
+}
+.lg-btn{
+    font-size: 20px;
+    font-weight: 600;
+}
