@@ -5,3 +5,71 @@
     font-size: 20px;
     font-weight: 600;
 }
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.t{
+    color: white;
+}
+
+/* Toggle button */
+.toggle-header-btn {
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Slide-out panel container */
+.header-slideout {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 240px;
+  height: 100vh;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* When open */
+.header-slideout.open {
+  right: 0;
+}
+
+/* Close (×) button */
+.close-header-btn {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 28px;
+  font-weight: bold;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+/* Button stack */
+.slideout-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Hide slideout on large screens */
+@media (min-width: 768px) {
+  .header-slideout {
+    display: none;
+  }
+}
