@@ -43,7 +43,6 @@ html, body {
   
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .sidebar-container {
     position: fixed;

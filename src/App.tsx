@@ -3,13 +3,14 @@ import HomePage from "./pages/HomePage";
 import MainLayout from "./Layouts/MainLayout";
 import "./App.css"
 import LoginPage from "./pages/LoginPage";
-import UserDashboard from "./pages/UserDashboard";
+import UserDashboard from "./pages/UserDashboard/UserDashboard";
 import PublicRoute from "./utils/PublicRoute";
 import ProtectedRoute from "./utils/ProtectedRoute";
 
 import NotFound from "./pages/NotFound";
 import adminroutes from "./routes/AdminRoutes";
 import { Suspense } from "react";
+import employeeroutes from "./routes/EmployeeRoutes";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
       </Route>
 
       {adminroutes}
+      {employeeroutes}
     </Route>
 
     <Route path="*" element={<NotFound />} />

@@ -63,9 +63,9 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="card p-4" style={{ maxWidth: "400px", width: "100%" }}>
+    <div className="container-fluid " style={{backgroundColor:"aqua",height:'100vh'}}>
+      <div className="row justify-content-center align-items-center vh-100">
+        <div className="card p-4" style={{ maxWidth: "450px", width: "100%" }}>
           <h3 className="text-center mb-4">Login</h3>
           <form onSubmit={handleSubmit} noValidate>
             <div className="mb-3">
