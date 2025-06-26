@@ -1,6 +1,48 @@
-.card{
-    max-width: 450px;
-    height: fit-content;
-    padding: 15px 30px;
-    margin-top: 50px;
+.home-container {
+  height: 100vh;
+  width: 100%;
+  background-image: url("/image/homebg.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-overlay {
+
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  max-width:700px;
+  font-weight: 600;
+  width: 90%;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.home-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #0056b3;
 }

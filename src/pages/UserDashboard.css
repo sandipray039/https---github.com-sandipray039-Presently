@@ -1,0 +1,12 @@
+.user-dashboard {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.user-dashboard .card {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
