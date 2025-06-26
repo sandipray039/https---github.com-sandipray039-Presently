@@ -4,6 +4,16 @@ import { useEffect, useState } from "react";
 import { getTodayAttendance } from "../../Services/AttendanceApi";
 import { useAuth } from "../../Contexts/AuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
 
 interface Attendance {
   id: number;
@@ -20,12 +30,28 @@ const ViewAttendance = () => {
   const [records, setRecords] = useState<Attendance[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [graphData, setGraphData] = useState<{ date: string; count: number }[]>([]);
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await getTodayAttendance(token);
         setRecords(res);
+        const groupedData = res.reduce((acc: Record<string, number>, curr: Attendance) => {
+  const dateKey = new Date(curr.checkInTime).toLocaleDateString("en-IN");
+  acc[dateKey] = (acc[dateKey] || 0) + 1;
+  return acc;
+}, {});
+
+const graphData = Object.entries(groupedData).map(([date, count]) => ({
+  date,
+  count: typeof count === "number" ? count : 0, // fallback in case of wrong type
+}));
+
+
+setGraphData(graphData);
+
       } catch (err) {
         setError("Failed to load attendance.");
       } finally {
@@ -41,6 +67,20 @@ const ViewAttendance = () => {
         <div className="card-header bg-dark text-white">
           <h4 className="mb-0">Today's Attendance</h4>
         </div>
+        {graphData.length > 0 && (
+  <div style={{ width: "100%", height: 250 }} className="mb-4">
+    <ResponsiveContainer width="100%" height="100%">
+      <LineChart data={graphData}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis allowDecimals={false} label={{ value: "Total Present", angle: -90, position: "insideLeft" }} />
+        <Tooltip />
+        <Line type="monotone" dataKey="count" stroke="#0d6efd" strokeWidth={2} dot />
+      </LineChart>
+    </ResponsiveContainer>
+  </div>
+)}
+
         <div className="card-body">
           {loading ? (
             <div className="text-center">

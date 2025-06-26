@@ -11,10 +11,13 @@ import NotFound from "./pages/NotFound";
 import adminroutes from "./routes/AdminRoutes";
 import { Suspense } from "react";
 import employeeroutes from "./routes/EmployeeRoutes";
+import { ToastContainer } from "react-toastify";
+import ScrollToTop from "./pages/ScrollToTop";
 
 const App = () => {
   return (
     <div>
+      <ScrollToTop/>
       <main>
        <Suspense fallback={<div>Loading...</div>}>
   <Routes>
@@ -39,7 +42,7 @@ const App = () => {
 </Suspense>
 
 
-
+<ToastContainer position="top-right" className="mt-5" autoClose={3000}/>
       </main>
     </div>
   );

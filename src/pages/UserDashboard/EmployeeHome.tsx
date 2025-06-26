@@ -106,10 +106,9 @@ const EmployeeHome = () => {
   }, []);
 
   return (
-
-    <div className="d-flex justify-content-center align-items-center vh-100 bg-light"   style={{ background: "linear-gradient(35deg, rgb(0 151 50) 0%, rgb(130, 4, 100) 73%, rgb(193, 15, 80) 100%)"
-  }}>
-      <div className="card p-4 shadow rounded" style={{ width: "100%", maxWidth: "550px" }}>
+<div className="container-fluid">
+    <div className=" d-flex justify-content-center vh-100 bg-light"   >
+      <div className="card p-4 shadow rounded" style={{ width: "100%", maxWidth: "550px",height:'fit-content',marginTop:'50px' }}>
         <h4 className="text-center mb-4">Employee Dashboard</h4>
 
         {isCheckedIn && (
@@ -151,7 +150,8 @@ const EmployeeHome = () => {
           🔁 End Break
         </button>
 
-        <p className="mt-3 text-center  text-danger">{status}</p>
+        <p className="mt-3 text-center  text-danger " style={{fontSize:'24px'}}>{status}</p>
+      </div>
       </div>
     </div>
 

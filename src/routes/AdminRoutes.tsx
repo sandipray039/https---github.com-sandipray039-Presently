@@ -10,6 +10,7 @@ const AddBranch = lazy(() => import("../pages/AdminDashboard/AddBranch"));
 const ViewAttendance = lazy(() => import("../pages/AdminDashboard/ViewAttendance"));
 const ShowEmployee = lazy(() => import("../pages/AdminDashboard/ShowEmployee"));
 const UpdateEmployee = lazy(() => import("../pages/AdminDashboard/UpdateEmployee"));
+const SeeBranch= lazy(() => import("../pages/AdminDashboard/SeeBranch"));
 
 const adminroutes = (
   <Route element={<ProtectedRoute allowedRoles={["Admin"]} />}>
@@ -17,6 +18,7 @@ const adminroutes = (
       <Route index element={<WelcomeAdmin />} />
       <Route path="add-employee" element={<AddEmployee />} />
       <Route path="add-branch" element={<AddBranch />} />
+      <Route path="see-branch" element={<SeeBranch/>} />
       <Route path="see-attendance" element={<ViewAttendance />} />
       <Route path="list-of-employees" element={<ShowEmployee/>}/>
       <Route path="update-employee/:id" element={<UpdateEmployee/>}/>

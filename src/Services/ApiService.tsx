@@ -72,6 +72,23 @@ export const fetchLocation=async (token:string|null)=>{
   return response.data;
 }
 
+export const addLocation = async (token: string | null, data: any) => {
+  try {
+    console.log("Sending payload:", data);
+    const response = await axios.post(`${BASE_URL}Location/add-location`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log("Response:", response.data);
+    return response.data;
+  } catch (error: any) {
+    console.error("Error:", error.response?.data || error.message);
+    throw error;
+  }
+};
+
+
 export const getAllEmployees=async(token:string |null)=>{
 
   const response=await axios.get(`${BASE_URL}Admin/get-all-employees`,{

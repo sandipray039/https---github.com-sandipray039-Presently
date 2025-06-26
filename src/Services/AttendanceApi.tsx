@@ -48,3 +48,12 @@ export const getTodayAttendance = async (token: string | null) => {
   });
   return res.data;
 };
+
+export const getpersonalAttendance=async(token:string|null)=>{
+   const res = await axios.get(`${API_BASE2}/my/all`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return res.data;
+}

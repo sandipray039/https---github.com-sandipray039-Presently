@@ -77,7 +77,7 @@ const UpdateEmployee = () => {
     try {
       await updateEmployee(formData, token);
       alert("Employee updated successfully");
-      navigate("/show-employee");
+   navigate("/admindashboard/list-of-employees");
     } catch (err) {
       console.error(err);
       alert("Failed to update employee");
