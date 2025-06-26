@@ -1,0 +1,11 @@
+# Ignore build folders
+bin/
+obj/
+
+# Ignore Visual Studio temp folder
+.vs/
+
+# Others (optional)
+*.user
+*.suo
+*.cache
