@@ -123,17 +123,6 @@ npm run dev
 * Admin-Employee authorization separation
 * RESTful APIs with clean contracts (DTO)
 
----
-
-## 🤝 Contributions
-
-Feel free to fork this project and add new features like:
-
-* Monthly attendance report export (PDF/Excel)
-* Google Maps visualization for branch locations
-* Push notifications for missed check-ins
-
----
 
 ## 📬 Contact
 
